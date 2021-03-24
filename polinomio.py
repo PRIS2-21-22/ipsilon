@@ -44,7 +44,7 @@ class Polinomio:
         producto = Polinomio(solucion)
         return producto
 
-    def toString(self):
+    def to_string(self):
 
         resultado = ""
         longitud = len(self.polinomio)
