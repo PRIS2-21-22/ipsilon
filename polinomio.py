@@ -18,7 +18,7 @@ class Polinomio:
         else:
             solucion = otroPolinomioInverso[:]
             for x in range(len(self.polinomio)):
-                solucion[x] += polinomioInverso[x]   
+                solucion[x] += polinomioInverso[x]
         
         suma = Polinomio(list(reversed(solucion)))
         return suma
@@ -44,6 +44,9 @@ class Polinomio:
         producto = Polinomio(solucion)
         return producto
 
+    def mcd(self):
+        return True
+
     def to_string(self):
 
         resultado = ""
@@ -66,4 +69,3 @@ class Polinomio:
                     resultado += " - "
 
         return resultado
-
