@@ -5,42 +5,42 @@ class Polinomio:
     def __init__(self, value):
         self.polinomio = value
 
-    def suma(self, otroPolinomio):
+    def suma(self, otro_polinomio):
 
         # El tamaño del array solucion debe ser igual al más grande de los 2, mientras que solo se haran tantas iteraciones como el tamaño del más pequeño
-        polinomioInverso = list(reversed(self.polinomio))
-        otroPolinomioInverso = list(reversed(otroPolinomio))
+        polinomio_inverso = list(reversed(self.polinomio))
+        otro_polinomio_inverso = list(reversed(otro_polinomio))
         
-        if len(self.polinomio) > len(otroPolinomio):
-            solucion = polinomioInverso[:]
-            for x in range(len(otroPolinomio)):
-                solucion[x] += otroPolinomioInverso[x]
+        if len(self.polinomio) > len(otro_polinomio):
+            solucion = polinomio_inverso[:]
+            for x in range(len(otro_polinomio)):
+                solucion[x] += otro_polinomio_inverso[x]
         else:
-            solucion = otroPolinomioInverso[:]
+            solucion = otro_polinomio_inverso[:]
             for x in range(len(self.polinomio)):
-                solucion[x] += polinomioInverso[x]
+                solucion[x] += polinomio_inverso[x]
         
         suma = Polinomio(list(reversed(solucion)))
         return suma
 
     def resta(self, otroPolinomio):
 
-        otroPolinomioNegativo = otroPolinomio[:]
+        otro_polinomio_negativo = otroPolinomio[:]
 
         for x in range(len(otroPolinomio)):
-            otroPolinomioNegativo[x] *= -1
+            otro_polinomio_negativo[x] *= -1
 
-        resta = self.suma(otroPolinomioNegativo)
+        resta = self.suma(otro_polinomio_negativo)
 
         return resta
 
-    def producto(self, otroPolinomio):
+    def producto(self, otro_polinomio):
 
-        solucion = [0] * (len(self.polinomio) + len(otroPolinomio) - 1)
+        solucion = [0] * (len(self.polinomio) + len(otro_polinomio) - 1)
 
         for i in range(len(self.polinomio)):
-            for j in range(len(otroPolinomio)):
-                solucion[i + j] += self.polinomio[i] * otroPolinomio[j]
+            for j in range(len(otro_polinomio)):
+                solucion[i + j] += self.polinomio[i] * otro_polinomio[j]
         producto = Polinomio(solucion)
         return producto
 

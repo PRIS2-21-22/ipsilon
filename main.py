@@ -2,37 +2,29 @@ from polinomio import Polinomio
 
 def main():
 
-    # creating an empty list
     v1 = []
 
-    # number of elemetns as input
     n = int(input("Introduzca el grado del 1er polinomio: "))
 
-    # iterating till the range
-    for i in range(0, n):
+    for _ in range(0, n):
         ele = int(input())
 
-        v1.append(ele) # adding the element
+        v1.append(ele)
 
     print(v1)
 
-    #v1 = [1, 1, 4, 1]
     po1 = Polinomio(v1)
 
-    # creating an empty list
     v2 = []
 
-    # number of elemetns as input
     n = int(input("Introduzca el grado del 2do polinomio: "))
 
-    # iterating till the range
-    for i in range(0, n):
+    for _ in range(0, n):
         ele = int(input())
 
-        v2.append(ele) # adding the element
+        v2.append(ele)
       
     print(v2)
-    valores2 = [2, 2, -2, 2]
     po2 = Polinomio(v2)
 
     print("Polinomio 1: " + po1.to_string())
