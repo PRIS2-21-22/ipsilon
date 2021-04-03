@@ -1,11 +1,10 @@
 class Polinomio:
     polinomio = []
 
-    '''Metodo constructor de la clase'''
+    """Metodo constructor de la clase"""
     def __init__(self, value):
         self.polinomio = value
 
-    '''Metodo utilizado para realizar sumas entre 2 polinomios'''
     def suma(self, other):
 
         # El tamaño del array solucion debe ser igual al más grande de los 2, mientras que solo se haran tantas iteraciones como el tamaño del más pequeño
@@ -24,7 +23,6 @@ class Polinomio:
         suma = Polinomio(list(reversed(solucion)))
         return suma
 
-    '''Metodo utilizado para realizar restas entre 2 polinomios'''
     def resta(self, other):
 
         other_negativo = other[:]
@@ -36,7 +34,6 @@ class Polinomio:
 
         return resta
 
-    '''Metodo utilizado para realizar productos entre 2 polinomios'''
     def producto(self, other):
 
         solucion = [0] * (len(self.polinomio) + len(other) - 1)
@@ -47,7 +44,6 @@ class Polinomio:
         producto = Polinomio(solucion)
         return producto
 
-    '''Metodo que devuelve el polinomio en forma de string'''
     def to_string(self):
 
         resultado = ""
