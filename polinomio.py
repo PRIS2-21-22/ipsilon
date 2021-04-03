@@ -1,51 +1,47 @@
 class Polinomio:
-    
     polinomio = []
 
     def __init__(self, value):
         self.polinomio = value
 
-    def suma(self, otro_polinomio):
+    def suma(self, other):
 
         # El tamaño del array solucion debe ser igual al más grande de los 2, mientras que solo se haran tantas iteraciones como el tamaño del más pequeño
         polinomio_inverso = list(reversed(self.polinomio))
-        otro_polinomio_inverso = list(reversed(otro_polinomio))
+        other_inverso = list(reversed(other))
         
-        if len(self.polinomio) > len(otro_polinomio):
+        if len(self.polinomio) > len(other):
             solucion = polinomio_inverso[:]
-            for x in range(len(otro_polinomio)):
-                solucion[x] += otro_polinomio_inverso[x]
+            for x in range(len(other)):
+                solucion[x] += other_inverso[x]
         else:
-            solucion = otro_polinomio_inverso[:]
+            solucion = other_inverso[:]
             for x in range(len(self.polinomio)):
                 solucion[x] += polinomio_inverso[x]
         
         suma = Polinomio(list(reversed(solucion)))
         return suma
 
-    def resta(self, otroPolinomio):
+    def resta(self, other):
 
-        otro_polinomio_negativo = otroPolinomio[:]
+        other_negativo = other[:]
 
-        for x in range(len(otroPolinomio)):
-            otro_polinomio_negativo[x] *= -1
+        for x in range(len(other)):
+            other_negativo[x] *= -1
 
-        resta = self.suma(otro_polinomio_negativo)
+        resta = self.suma(other_negativo)
 
         return resta
 
-    def producto(self, otro_polinomio):
+    def producto(self, other):
 
-        solucion = [0] * (len(self.polinomio) + len(otro_polinomio) - 1)
+        solucion = [0] * (len(self.polinomio) + len(other) - 1)
 
-        for i in range(len(self.polinomio)):
-            for j in range(len(otro_polinomio)):
-                solucion[i + j] += self.polinomio[i] * otro_polinomio[j]
+        for posi, val1 in enumerate(self.polinomio):
+            for posj, val2 in enumerate(other):
+                solucion[posi + posj] += val1 * val2
         producto = Polinomio(solucion)
         return producto
-
-    def mcd(self):
-        return True
 
     def to_string(self):
 
