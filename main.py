@@ -23,7 +23,7 @@ def main():
         ele = int(input())
 
         v2.append(ele)
-      
+
     print(v2)
     po2 = Polinomio(v2)
 

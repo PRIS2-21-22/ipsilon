@@ -9,7 +9,7 @@ class Polinomio:
         # El tamaño del array solucion debe ser igual al más grande de los 2, mientras que solo se haran tantas iteraciones como el tamaño del más pequeño
         polinomio_inverso = list(reversed(self.polinomio))
         other_inverso = list(reversed(other))
-        
+
         if len(self.polinomio) > len(other):
             solucion = polinomio_inverso[:]
             for x in range(len(other)):
