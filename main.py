@@ -32,10 +32,10 @@ def main():
 
     suma = po1.suma(po2.polinomio)
     print("Suma  de los polinomios 1 y 2: " + suma.to_string())
-    
+
     resta = po1.resta(po2.polinomio)
     print("Resta de los polinomios 1 y 2: " + resta.to_string())
-    
+
     producto = po1.producto(po2.polinomio)
     print("Producto de los polinomios 1 y 2: " + producto.to_string())
 

@@ -18,7 +18,7 @@ class Polinomio:
             solucion = other_inverso[:]
             for x in range(len(self.polinomio)):
                 solucion[x] += polinomio_inverso[x]
-        
+
         suma = Polinomio(list(reversed(solucion)))
         return suma
 
